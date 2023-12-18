@@ -1,1 +1,117 @@
-{"remaining":[{"option":"One-Star Restaurant Experience","description":"Enjoy a meal at a Michelin-starred French restaurant with exquisite cuisine in a sophisticated atmosphere.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#3e5c76ff"}},{"option":"Candlelight Dinner at Home","description":"A romantic evening with a home-cooked meal or favorite dishes, set in a cozy ambiance with candlelight.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#748cabff"}},{"option":"Delivered Gourmet Dinner","description":"Order a high-end meal from a top restaurant, delivered to enjoy a virtual date.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#748cabff"}},{"option":"Stargazing Night","description":"Drive to a place with minimal light pollution for stargazing with a telescope and a cozy blanket.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#0d1321ff"}},{"option":"Themed Movie Marathon","description":"A movie marathon night with themed snacks, based on her favorite series or genre.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#1d2d44ff"}},{"option":"DIY Spa Night","description":"Create a spa-like environment at home with DIY face masks, relaxing music, and a bubble bath.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#0d1321ff"}},{"option":"Virtual Travel Experience","description":"Spend the evening 'traveling' to a chosen country with its cuisine, movies, and music.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#748cabff"}},{"option":"Mystery Adventure","description":"Plan a day of surprises, from new exhibits to workshops or scenic hikes.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#748cabff"}},{"option":"TV Dinner","description":"Relax with a classic pre-packaged meal while watching TV.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#0d1321ff"}},{"option":"Simon's Delivery Service","description":"Enjoy a unique meal from Simon's exclusive and quirky delivery service.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#1d2d44ff"}},{"option":"Dinosaur Dinner","description":"Travel back in time with a prehistoric-themed meal complete with dinosaur-shaped foods.","date":null,"style":{"textColor":"#ffffff","backgroundColor":"#748cabff"}}],"removed":[{"option":"Alien-Themed Feast","description":"Dine like an extraterrestrial with space-themed dishes and cosmic decorations.","date":"2023-12-18T21:01:05.969Z","style":{"textColor":"#ffffff","backgroundColor":"#0d1321ff"}}]}
+{
+  "remaining": [
+    {
+      "option": "The ITO Experience",
+      "description": "Weve wanted to go for a while now, so why not? The ITO Experience is a 5-course meal with a wine pairing. The menu changes every month, so itll be a surprise!",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#748cabff"
+      },
+      "link": "http://www.ito-restaurant.de/"
+    },
+    {
+      "option": "Candlelight Dinner at Simons",
+      "description": "A romantic evening with a home-cooked meal by me, food can be on request.  Set in a cozy ambiance with candlelight.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#1d2d44ff"
+      }
+    },
+    {
+      "option": "Liefer Date",
+      "description": "Order a high-class meal from a top restaurant on a lieferdienst (sarcasm), delivered to enjoy a virtual date at home.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#748cabff"
+      }
+    },
+    {
+      "option": "Themed Movie Marathon",
+      "description": "A movie marathon night with themed snacks, movies/series can be anything you choose.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#1d2d44ff"
+      }
+    },
+    {
+      "option": "Virtual Travel Experience",
+      "description": "Spend the evening 'traveling' to a chosen country with its cuisine, movies, and music. Your pick! I or us both can cook together.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#748cabff"
+      }
+    },
+    {
+      "option": "Suprise Date",
+      "description": "A date with food, who knows what it will be?",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#1d2d44ff"
+      }
+    },
+    {
+      "option": "TV Dinner",
+      "description": "Sorry, luck of the draw. Relax with a frozen pizza or the like, while watching TV.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#0d1321ff"
+      }
+    },
+    {
+      "option": "Simon's Delivery Service",
+      "description": "Enjoy a unique meal from Simon's exclusive Kölner delivery service.  The menu is a surprise, but it comes with a really hot date.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#1d2d44ff"
+      }
+    },
+    {
+      "option": "Italian for two",
+      "description": "Another place weve never gotten around to trying.  Enjoy a romantic evening with some pricey italian food.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#1d2d44ff"
+      },
+      "link": "https://www.rosticceria-massimo.de/"
+    },
+    {
+      "option": "Breakfast for Dinner",
+      "description": "Hmm, breakfast for dinner?  Why not?  Crepes or french toast, you choose. Maple syrup is a must.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#3e5c76ff"
+      },
+      "link": "https://www.rosticceria-massimo.de/"
+    },
+    {
+      "option": "DIY Pizza Night",
+      "description": "Ill make the napolean dough, you choose the toppings.  We can make it together or you can watch me make it.  Bella ciao, bella ciao, bella ciao ciao ciao.",
+      "date": null,
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#0d1321ff"
+      },
+      "link": "https://www.rosticceria-massimo.de/"
+    },
+    {
+      "option": "DIY Wine, Cheese and Spa Night",
+      "description": "We make your flat (its warmer and has a bathtub) into a spa-like environment with DIY heilerd face masks, relaxing music, and a bubble bath. Added bonus: wine and cheese.",
+      "date": "2023-12-18T21:35:02.260Z",
+      "style": {
+        "textColor": "#ffffff",
+        "backgroundColor": "#748cabff"
+      }
+    }
+  ],
+  "removed": []
+}

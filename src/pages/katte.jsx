@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import Link from 'next/link';
 
 // Dynamically import the Wheel component with SSR disabled
 const Wheel = dynamic(() => import('react-custom-roulette').then((mod) => mod.Wheel), { ssr: false });
@@ -84,6 +85,9 @@ export default function Home() {
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {date.date && new Date(date.date).toLocaleString()}
                       </p>
+                      {date.link && (
+                      <Link className="text-sm text-gray-500 dark:text-gray-400" href={date.link}>{date.link}</Link>
+                      )}
                     </div>
                   </div>
                 </li>
@@ -116,6 +120,9 @@ export default function Home() {
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {date.date && new Date(date.date).toLocaleString()}
                       </p>
+                      {date.link && (
+                      <Link className="text-sm text-gray-500 dark:text-gray-400" href={date.link}>{date.link}</Link>
+                      )}
                     </div>
                   </div>
                 </li>
