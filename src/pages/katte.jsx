@@ -6,8 +6,10 @@
 /* eslint-disable @typescript-eslint/prefer-optional-chain */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { useState, useEffect } from 'react';
-import Head from "next/head";
 import dynamic from 'next/dynamic';
+import { CardHeader, CardContent, Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 // Dynamically import the Wheel component with SSR disabled
 const Wheel = dynamic(() => import('react-custom-roulette').then((mod) => mod.Wheel), { ssr: false });
@@ -40,6 +42,7 @@ export default function Home() {
     setMustSpin(false);
     // TAke the prizeNumber and remove it from the remaining array
     const selectedItem = data.remaining[prizeNumber];
+    selectedItem.date = new Date().toISOString();
     const updatedCurrentData = data.remaining.filter((_, index) => index !== prizeNumber);
     const updatedRemovedItems = [...data.removed, selectedItem];
     const newData = { remaining: updatedCurrentData, removed: updatedRemovedItems};
@@ -57,29 +60,73 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-purple-900 to-blue-900">
-    {data.remaining?.length > 0 && (
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 shadow-lg">
-        <Wheel
-            mustStartSpinning={mustSpin}
-            prizeNumber={prizeNumber}
-            spinDuration={0.5}
-            data={data.remaining}
-            onStopSpinning={onStopSpinning}
-          />
-        <button onClick={() => handleSpinClick()} className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">SPIN</button>
-      </div>
-    )}
-    {data.removed.length > 0 && (
-      <div className="removed-items-container flex flex-col md:flex-row-reverse md:justify-around w-full">
-        <h2 className="text-lg font-bold text-purple-500">Removed Items:</h2>
-        <ol className="list-decimal list-inside text-blue-300">
+    <main className="flex flex-col md:flex-row justify-center items-start gap-6 md:gap-12 p-4 md:p-8">
+    <aside className="order-2 md:order-1 w-full md:w-1/3">
+      <Card className="w-full">
+        <CardHeader>
+          <h2 className="text-2xl font-bold">Prize List</h2>
+        </CardHeader>
+        <CardContent className="divide-y divide-gray-200 dark:divide-gray-800">
+    
+          <ul className="divide-y divide-gray-200 dark:divide-gray-800">
+          {data.removed.length > 0 && (
+            <>
           {data.removed.map((item, index) => (
-            <li key={index}>{item.option}</li>
+            <li key={index} className="py-4">
+              <div className="flex items-center gap-4">
+                <Badge className="text-xs" color="green" variant="solid">
+                  {index + 1}
+                </Badge>
+                <div className="flex-1">
+                  <h3 className="font-semibold">{item.option}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {item.description}
+                    </p>
+
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {item.date && new Date(item.date).toLocaleString()}
+                    </p>
+                </div>
+              </div>
+            </li>
           ))}
-        </ol>
-      </div>
+          </>
+
     )}
+          </ul>
+        </CardContent>
+      </Card>
+    </aside>
+    <div className="order-1 md:order-2 flex flex-col items-center w-full md:w-2/3 mb-20">
+      <h1 className="text-5xl font-extrabold mb-6 text-center bg-clip-text">
+        Spin the Wheel!
+      </h1>
+      <Button
+      onClick={() => handleSpinClick()}
+        className="mb-6 py-3 px-8 rounded-full shadow-lg text-lg font-semibold hover:bg-indigo-700 transition-colors duration-300"
+        color="indigo"
+        size="large"
+        variant="solid"
+      >
+        Spin Now!
+      </Button>
+      <div className="rounded-full mt-6">
+        {data.remaining?.length > 0 ? (
+        <Wheel
+                mustStartSpinning={mustSpin}
+                prizeNumber={prizeNumber}
+                spinDuration={1}
+                data={data.remaining}
+                onStopSpinning={onStopSpinning}
+              />
+        ):
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="text-2xl font-bold">All prizes have been claimed!</h2>
+          <p className="text-gray-500 dark:text-gray-400">Please check back later.</p>
+        </div>
+          }
+      </div>  
+    </div>
   </main>
   
   );
