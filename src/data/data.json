@@ -1,0 +1,26 @@
+{
+  "remaining": [
+    {
+      "option": "Movie Night",
+      "style": {
+        "backgroundColor": "green",
+        "textColor": "black"
+      }
+    },
+    {
+      "option": "Dinner at a Restaurant",
+      "style": {
+        "backgroundColor": "blue",
+        "textColor": "white"
+      }
+    },
+    {
+      "option": "Walk in the Park",
+      "style": {
+        "backgroundColor": "red",
+        "textColor": "white"
+      }
+    }
+  ],
+  "removed": []
+}
