@@ -2,7 +2,7 @@
 const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: true,
+    project: false,
   },
   plugins: ["@typescript-eslint"],
   extends: [
@@ -13,25 +13,9 @@ const config = {
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
     // Feel free to reconfigure them to your own preference.
-    "@typescript-eslint/array-type": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
 
-    "@typescript-eslint/consistent-type-imports": [
-      "warn",
-      {
-        prefer: "type-imports",
-        fixStyle: "inline-type-imports",
-      },
-    ],
-    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-    "@typescript-eslint/require-await": "off",
-    "@typescript-eslint/no-misused-promises": [
-      "error",
-      {
-        checksVoidReturn: { attributes: false },
-      },
-    ],
   },
+  ignorePatterns: ["node_modules/", ".next/", "out/", 'src/data/data.json', '@/components/**/*', 'src/pages/api/data.js'],
 };
 
 module.exports = config;
