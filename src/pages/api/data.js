@@ -9,7 +9,7 @@
 // pages/api/updateData.js
 import fs from 'fs';
 import path from 'path';
-
+import clientPromise from '../../lib/mongodb';
 const filePath = path.join(process.cwd(), 'src', 'data', 'data.json');
 
 function readDataFile() {
@@ -39,33 +39,18 @@ function getColorByTitle(title) {
   return colors[index];
 }
 
-export default function handler(req, res) {
-  if (req.method === 'POST') {
+export default async function handler(req, res) {
+  const client = await clientPromise;
+  const db = client.db("db"); // Replace with your database name
+
+  if (req.method === 'GET') {
+    const data = await db.collection("collection").findOne({});
+    res.status(200).json(data);
+  } else if (req.method === 'POST') {
     const { remaining, removed } = req.body;
-    const fileContents = readDataFile();
-
-    fileContents.remaining = remaining.map((item) => ({
-      ...item,
-      style:{
-        textColor: '#ffffff',
-        backgroundColor: getColorByTitle(item.option),
-      }
-    }));
-    fileContents.removed = removed.map((item) => ({
-      ...item,
-      style:{
-        textColor: '#ffffff',
-        backgroundColor: getColorByTitle(item.option),
-      }
-    }));
-
-    fs.writeFileSync(filePath, JSON.stringify(fileContents));
-    res.status(200).json(fileContents);
-  } else if (req.method === 'GET') {
-    const fileContents = readDataFile();
-    res.status(200).json(fileContents);
+    await db.collection("collection").updateOne({}, { $set: { remaining, removed } }, { upsert: true });
+    res.status(200).json({ remaining, removed });
   } else {
-    // Method not allowed
     res.status(405).end();
   }
 }
