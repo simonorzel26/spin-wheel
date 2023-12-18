@@ -15,7 +15,7 @@ import Link from 'next/link';
 // Dynamically import the Wheel component with SSR disabled
 const Wheel = dynamic(() => import('react-custom-roulette').then((mod) => mod.Wheel), { ssr: false });
 
-export default function Home() {
+export default function Home(props) {
   const [data, setData] = useState({remaining:[], removed:[]});
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
@@ -173,3 +173,8 @@ export default function Home() {
   );
 }
 
+
+export async function getStaticProps(context) {
+  // Fetch data at build time
+  return { props: { /* your props here */ } };
+}
